@@ -9,6 +9,21 @@
   </div>
 
 <div class="modal-body">
+   <form action=""  >
+    <div class="form-group">
+      <label for="yourAuthorName">Indicate the Quote Author:</label>
+      <input type="text" name="authorNameInput" rows="1" class="form-control" required>
+      <label for="yourQuoteInput">Input the Quote:</label>
+      <textarea type="text" name="quoteTextArea" id="quoteText" rows="5" class="form-control" required></textarea>
+      <div id="errorTxt" class="invalid-feedback">
+        Please type in a Quote to be listed
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary">Submit Quote</button>&nbsp;&nbsp;
+      <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Exit</button>
+    </div>
+  </form>
 </div>
 </ng-template>
 
