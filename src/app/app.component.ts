@@ -10,6 +10,11 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 export class AppComponent {
   title = 'QuoteRating-App';
 
+// Create a new Array-type variable to hold the quote input values   
+// submitted through the modal hosted form by a user contributor.
+
+    quoteInputs = Array();
+    
 
   constructor(private ngModal:NgbModal){}
 
