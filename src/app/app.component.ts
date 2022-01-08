@@ -14,4 +14,12 @@ export class AppComponent {
   constructor(private ngModal:NgbModal){}
 
   
+
+  openQuoteModal(modalContent:any){
+
+      this.ngModal.open(modalContent);
+
+    }
+
+
 }
