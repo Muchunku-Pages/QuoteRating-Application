@@ -41,13 +41,13 @@ export class AppComponent {
        
         let quoteAuthor:string= form.authorNameInput.value;
        
-        let newUserQuote:string= form.quoteTextArea.value; // Access the form's textArea input quote value submitted 
-                                                           // by a user contributor and assign the value obtained 
+        let newUserQuote:string= form.quoteTextArea.value; // This accesses the form's textArea input quote value submitted 
+                                                           // by a user contributor and assigns the value obtained 
                                                            // to the 'newUserQuote' variable, formulating a similar 
                                                            // code statement for the form's author name input.
        
   
-   // Formulate a Quote Object to enable us hold each individual modal-form Quote entry 
+   // We then formulate a Quote Object to enable us hold each individual modal-form Quote entry 
    // and its associated vote attributes and functions, in the quoteInputs array as the properties
    // of an instance of our Quote Object Variable 'objectQuote'.
    
@@ -59,9 +59,19 @@ export class AppComponent {
 
     daysElapsed:new Date(),
 
-    votes:0
+    votes:0  }   
 
-    }   
+
+   // To enable us render each individual Quote property set for each user quote entry submission, 
+   // as a table row record entry in our app component's corresponding HTML template, we call the
+   // quoteInputs Array's push() method, passing it the 'objectQuote' Object as a parameter,
+   // which provide each individual Quote instance's property value set to be held as an array element/item
+   // in our quoteInputs array. 
+
+    this.quoteInputs.push(objectQuote);
+  
 
     }
+
   }
+
