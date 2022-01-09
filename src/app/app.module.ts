@@ -3,10 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {TimeElapsedPipe} from './time-elapsed.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TimeElapsedPipe
+  
   ],
   imports: [
     BrowserModule,
