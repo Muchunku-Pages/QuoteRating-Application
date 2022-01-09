@@ -48,7 +48,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let objectQuote of quoteInputs; index as i"> 
+              <!-- Display each user quote pushed into our quoteInputs array-->
+              <!-- from the modal form on our view-port, by apply angular's-->
+              <!-- 'For' loop statement to enable looping through the quoteInputs-->
+              <!-- array, rendering each of our user quoteInputs array items -->
+              <!-- in the assigned template table element-->
+             
           <td>UserQuotePlaceholder</td>
           <td>QuoteAuthorPlaceholder</td>
           <td>ElapsedDaysPlaceholder</td>
