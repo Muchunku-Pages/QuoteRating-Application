@@ -70,8 +70,34 @@ export class AppComponent {
 
     this.quoteInputs.push(objectQuote);
   
+   // After the submission of each user quote into the AppComponent array, we need to ensure 
+   // the modal form's input controls are cleared of the previously entered user data, 
+   // prior to its submission by invoking following code statements:
+
+
+      form.authorNameInput.value ="";
+
+      form.quoteTextArea.value = "";
+
+  // To remove the modal together with all its sub-modals and controls from memory 
+  // to terminate its activity within the application we invoke the modal's 
+  // dismissAll() method using the following code statement:
+
+    this.ngModal.dismissAll()
+   
 
     }
+
+    deleteQuoteEntry(index:any){
+
+    // To remove a selected table quote entry from the corresponding HTML template table 
+    // we invoke the quoteInputs array's splice() method, as follows:
+   
+    this.quoteInputs.splice(index,1);
+   
+  
+        
+     }  
 
   }
 
