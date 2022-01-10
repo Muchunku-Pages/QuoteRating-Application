@@ -95,9 +95,32 @@ export class AppComponent {
    
     this.quoteInputs.splice(index,1);
    
-  
-        
      }  
 
-  }
+
+  voteAcquired(i:any, buttonDesignation:string){
+
+    // Formulate the voteAcquired function operation by assigning an item of our quoteInputs Array 
+    // of objectQuote,of the index value passed in by the parameter i to a newly declared variable 
+    // - 'quoteItem', representing a single item of the quoteInputs Array of objectQuote items.
+  
+    let quoteItem:any = this.quoteInputs[i];
+  
+    // Next we formulate an Angular If directive statement whose result is assigned
+    // to the quoteInputs Array item of the passed in parameter index value i 
+    // to determine the newly incremented or decremented  vote property value of 
+    // the index value i - quoteItem for the corresponding  quoteInputs Array's  
+    // objectQuote Item initial vote value of the very same parameter index value 
+    // passed into the two-way databound function.    
+     
+  
+    this.quoteInputs[i].votes =  buttonDesignation === "upVote" ? quoteItem.votes + 1: quoteItem.votes - 1;
+  
+    
+   
+    }
+
+
+
+}
 

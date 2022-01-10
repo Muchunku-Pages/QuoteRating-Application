@@ -51,7 +51,7 @@
         <tr *ngFor="let objectQuote of quoteInputs; index as i"> 
               <!-- Display each user quote pushed into our quoteInputs array-->
               <!-- from the modal form on our view-port, by apply angular's-->
-              <!-- 'For' loop statement to enable looping through the quoteInputs-->
+              <!-- 'For' directive to enable looping through the quoteInputs-->
               <!-- array, rendering each of our user quoteInputs array items -->
               <!-- in the assigned template table element-->
              
@@ -59,16 +59,15 @@
           <td>{{objectQuote.quoteAuthor}}</td>
           <td>{{objectQuote.daysElapsed | timeElapsed}}</td><!--timeElapsed pipe channeled into the daysElapsed property-->
                                                            <!-- using the custom pipe referencing syntax -->
-          <td>VotesGarneredPlaceholder</td><td>&nbsp;&nbsp;
-            <button  class="buttonVote" type ="button"  name="upVote" class="btn btn-success btn-small qBtn">
-            + Up Vote</button>&nbsp;
-            <button class="buttonVote" type="button"  name="downVote" class="btn btn-danger btn-small qBtn">
-            Down Vote -</button>
+          <td>{{objectQuote.votes}}</td><td>&nbsp;&nbsp;
+            <button class="buttonVote" type ="button"  name="upVote" class="btn btn-success btn-small qBtn"
+                    (click)="voteAcquired(i, 'upVote')">+ Up Vote</button>&nbsp;
+            <button class="buttonVote" type="button"  name="downVote" class="btn btn-danger btn-small qBtn"
+                     (click)="voteAcquired(i, 'downVote')">Down Vote -</button>
           </td>
           <td>
             <button type="button" class="btn btn-secondary qBtn" (click)="deleteQuoteEntry(i)">Remove</button>          </td>
         </tr>
       </tbody>
-
     </table>
   </div>
